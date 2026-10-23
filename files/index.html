@@ -1,0 +1,132 @@
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Basketball Scoreboard</title>
+
+    <!-- Menghubungkan CSS -->
+    <link rel="stylesheet" href="./style.css">
+
+    <!-- Menghubungkan JavaScript -->
+    <script src="./script.js" defer></script>
+</head>
+
+<body>
+
+    <main class="scoreboard">
+
+        <h1>BASKETBALL SCOREBOARD</h1>
+
+        <div class="teams">
+
+            <!-- HOME TEAM -->
+            <section class="team" id="home-panel">
+
+                <h2>HOME</h2>
+
+                <div class="score" id="home-score">0</div>
+
+                <div class="buttons">
+                    <button onclick="addScore('home', 1)">+1</button>
+                    <button onclick="addScore('home', 2)">+2</button>
+                    <button onclick="addScore('home', 3)">+3</button>
+                </div>
+
+                <div class="fouls">
+                    FOULS
+
+                    <div class="foul-number" id="home-fouls">
+                        0
+                    </div>
+
+                    <div class="buttons">
+                        <button onclick="changeFoul('home', -1)">−</button>
+                        <button onclick="changeFoul('home', 1)">+</button>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- GUEST TEAM -->
+            <section class="team" id="guest-panel">
+
+                <h2>GUEST</h2>
+
+                <div class="score" id="guest-score">0</div>
+
+                <div class="buttons">
+                    <button onclick="addScore('guest', 1)">+1</button>
+                    <button onclick="addScore('guest', 2)">+2</button>
+                    <button onclick="addScore('guest', 3)">+3</button>
+                </div>
+
+                <div class="fouls">
+                    FOULS
+
+                    <div class="foul-number" id="guest-fouls">
+                        0
+                    </div>
+
+                    <div class="buttons">
+                        <button onclick="changeFoul('guest', -1)">−</button>
+                        <button onclick="changeFoul('guest', 1)">+</button>
+                    </div>
+                </div>
+
+            </section>
+        </div>
+
+        <!-- INFORMASI TIM PEMIMPIN -->
+        <p id="leader-status" aria-live="polite">
+            GAME TIED
+        </p>
+
+        <!-- PERIOD DAN TIMER -->
+        <div class="bottom">
+
+            <section>
+                <h3>PERIOD</h3>
+
+                <div id="period">1</div>
+
+                <div class="buttons">
+                    <button onclick="changePeriod(-1)">−</button>
+                    <button onclick="changePeriod(1)">+</button>
+                </div>
+            </section>
+
+            <section>
+                <h3>GAME TIMER</h3>
+
+                <div id="timer">10:00</div>
+
+                <div class="buttons">
+                    <button id="timer-button"
+                            onclick="toggleTimer()">
+                        Start
+                    </button>
+
+                    <button onclick="resetTimer()">
+                        Reset
+                    </button>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- TOMBOL GAME BARU -->
+        <button class="new-game" onclick="newGame()">
+            NEW GAME
+        </button>
+
+    </main>
+
+</body>
+</html>
